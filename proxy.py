@@ -27,11 +27,11 @@ while True:
         print("The proxy server has received a response from the web server at" + str(timeResponse))
         clientSocket.send(response.encode()) #I am sending the response from the web server to the client
         w=time.localtime() #the time of sending the response to the client
-        current_time_proxy = time.strftime("%H:%M:%S",w)
+        current_time_proxy = time.strftime("%H:%M:%S",w) #this is the time of sending the proxy
         print("The response was sent to the client at " + str(current_time_proxy))
     except:
         error_message= "[ERROR]...... There was an error establishing a connection....."
-        clientSocket.send(error_message.encode())
+        clientSocket.send(error_message.encode()) 
         print("[ERROR]....The proxy has encountered an error!!")
     finally:
         clientSocket.close() #the connection with the client closes
